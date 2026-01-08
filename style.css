@@ -92,9 +92,25 @@ a{
     text-align: left;
     outline: none;
     font-size: 1.2rem;
-    width: 100%;
+    width: calc(100% - 100px);
     padding: 10px 0;
     cursor: pointer;
+    display: inline-block;
+}
+
+/* Project link styling */
+.project-link {
+    display: inline-block;
+    width: 100px;
+    font-size: 1.2rem;
+    color: #0a7ae2;
+    display: none;
+    padding: 10px 0;
+    margin-right: 10px;
+    transition: color .2s ease;
+}
+.project-link:hover {
+    color: #0a66c2;
 }
 .section-2 button.accordion-panel{
     background-color: #1e1f21;
