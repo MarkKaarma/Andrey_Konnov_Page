@@ -82,7 +82,7 @@ a{
     padding: 5px;
     font-size: 1.2rem;
     padding-left: 0;
-    width: 100px;
+    width: 300px;
 }
 
 .section-2 button.accordion-header{
@@ -107,11 +107,19 @@ a{
 
 
 /* animations / utilities */
-.section-2 a:hover{
+/* don't apply the font-size hover to skill pills (avoids layout jump) */
+.section-2 a:not(.skill):hover{
     font-size: 1.3rem;
     color: #fff;
     cursor: pointer;
     transition: 0.2s;
+}
+
+/* Subtle hover for .skill that doesn't change layout */
+.section-2 .skill:hover{
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.06);
+    transform: none; /* ensure no translateY or size changes */
 }
 
 .section-1 a:hover{
@@ -171,7 +179,31 @@ a{
 .accordion-header.active span { transform: rotate(45deg); }
 
 .skills-list { display:flex; flex-direction:row; gap:8px; margin:8px 0 14px 0; flex-wrap:wrap; align-items:center; }
- .skill { display:inline-block; padding:10px 18px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); color: var(--text-light); border-radius:999px; text-decoration:none; transition: background .16s ease, transform .12s ease; box-sizing: border-box; text-align: center; position: relative; }
+ .skill {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 14px;
+  background: rgba(255,255,255,0.02);
+  border:4px solid rgba(255,255,255,0.03);
+  color: var(--text-light);
+  border-radius:999px;
+  text-decoration:none;
+  transition: background .16s ease, transform .12s ease;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  white-space: normal; /* allow wrapping */
+  line-height: 1.2;
+  /* wrapping and overflow control */
+  word-break: normal;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  flex: 0 1 auto; /* allow shrinking on small screens */
+  max-width: 100%;
+  min-width: 0; /* allow flex items to shrink/grow properly */
+ }
 
 /* Tooltip popup for elements with data-tooltip */
 .skill[data-tooltip]::after {
@@ -217,7 +249,18 @@ a{
   outline: 2px solid rgba(10,102,194,0.25);
   border-color: rgba(10,102,194,0.35);
 }
-@media (max-width:480px) {
+/* Special color for GIS product pill */
+.skill-gis {
+  background: rgba(10,102,194,0.12);
+  border-color: rgba(10,102,194,0.25);
+  color: #e9f2ff;
+}
+.skill-gis:hover,
+.skill-gis:focus {
+  background: rgba(10,102,194,0.18);
+  border-color: rgba(10,102,194,0.35);
+  color: #fff;
+}@media (max-width:480px) {
   .skills-list { flex-direction:column; }
   .skill { width:100%; max-width:100%; border-radius:8px; }
   /* mobile adjustments for panels */
@@ -230,16 +273,14 @@ a{
 .subitem {
   padding:6px 10px;
   cursor:pointer;
-  background: var(--muted);
-  border:1px solid rgba(255,255,255,0.03);
-  color: var(--text-light);
+  background: rgba(10,102,194,0.12); /* subtle blue */
+  border:1px solid rgba(10,102,194,0.18);
+  color: #e9f2ff;
   border-radius:6px;
   transition: background .18s ease, border-color .18s ease, color .18s ease, transform .15s ease;
 }
-.subitem:hover { background:#151618; transform: translateY(-2px); }
-.subitem.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-/* Panels use max-height transitions to animate opening/closing */
+.subitem:hover { background: rgba(10,102,194,0.18); transform: translateY(-2px); color: #fff; border-color: rgba(10,102,194,0.35); }
+.subitem:focus { outline: 2px solid rgba(10,102,194,0.25); border-color: rgba(10,102,194,0.35); }
 .accordion-panel {
   max-height: 0;
   overflow: hidden;
@@ -282,6 +323,43 @@ a{
   scrollbar-width: thin;
   scrollbar-color: rgba(255,255,255,0.06) transparent;
 }
+
+/* Image sizing inside panels */
+.accordion-panel img,
+.subpanel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  margin: 12px 0;
+  display: block;
+}
+
+/* Paragraph spacing inside panels */
+.accordion-panel p,
+.subpanel p {
+  margin-bottom: 12px;
+}
+/* List spacing inside panels */
+.accordion-panel ol,
+.accordion-panel ul,
+.subpanel ol,
+.subpanel ul {
+  margin: 8px 0 12px 1.15rem;
+  padding-left: 0.6rem;
+}
+.accordion-panel li,
+.subpanel li { margin-bottom: 6px; }
+
+/* Ensure scrolling remains active on small screens */
+@media (max-width:480px) {
+  .project-group .accordion-panel.open,
+  .project-group .subpanel.open {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+}
+
 /* Webkit scrollbar styling */
 .project-group .accordion-panel.open::-webkit-scrollbar,
 .project-group .subpanel.open::-webkit-scrollbar {
@@ -295,5 +373,51 @@ a{
 .project-group .accordion-panel.open::-webkit-scrollbar-track,
 .project-group .subpanel.open::-webkit-scrollbar-track {
   background: transparent;
+}
+
+/* Image modal styles */
+.img-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.65);
+  z-index: 120;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .22s ease, visibility .22s ease;
+}
+.img-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.img-modal-inner { position: relative; max-width: 94vw; max-height: 94vh; padding: 20px; box-sizing: border-box; transform: scale(.98); transition: transform .22s ease; }
+.img-modal.open .img-modal-inner { transform: scale(1); }
+.img-modal-content { display: block; width: auto; height: auto; max-width: calc(100vw - 64px); max-height: calc(100vh - 64px); object-fit: contain; border-radius: 6px; box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
+.img-modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+.img-modal-close:hover {
+  background: rgba(220,40,40,0.8);
+  transform: scale(1.1);
+}
+@media (max-width:480px) {
+  .img-modal-inner { max-width: 92vw; max-height: 80vh; }
+  .img-modal-close { top: -6px; right: -6px; }
 }
 

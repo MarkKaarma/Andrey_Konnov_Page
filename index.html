@@ -20,23 +20,24 @@
         </div>
         <div class="section-2">
             <h2>About me</h2>
-            <p>I'm a final-year BSc student in Ecology and Environmental Engineering, and I have a strong passion for using GIS technologies to solve complex urban and environmental challenges. My academic preferences has evolved from analyzing environmental impacts to focusing on the intersection of GIS, data science, and urban planning.</p>
+            <p>I'm a final-year BSc student in Ecology and Environmental Engineering, and I have a strong passion for using GIS technologies to solve complex urban and environmental challenges. My academic preferences starts from analyzing environmental impacts, to focusing on the intersection of GIS, data science, and urban planning.</p>
             <p>My hands-on experience includes conducting integral assessments for urban sports infrastructure, developing a novel methodology for aesthetic landscape evaluation in cities and nature reserve areas using GIS and drone photogrammetry, and modeling environmental changes like biodiversity loss and industrial site dynamics.</p>
-            <p>I am proficient with a suite of geospatial tools (ArcGIS Pro, QGIS, Agisoft Metashape) and data collection via UAV/drone surveying.</p>
+            <p>I am proficient with a suite of geospatial tools (ArcGIS Pro, QGIS, Agisoft Metashape) and data collection via drone surveying.</p>
             <p>Currently exploring the use of smart electronics and spatial analysis to understand human mobility patterns and demographic structures in cities, presented my research on 24th European Colloquium on Theoretical and Quantitative Geography in Tallinn, Estonia.</p>
             <h2>Experience</h2>
             <p>Тут добавить текст насчет твоего опыта</p>
 
             <h2>Skills</h2>
             <div class="skills-list">
-                <a class="skill">Data Analysis</a>
-                <a class="skill">GIS / Mapping</a>
-                <a class="skill">Field Sampling</a>
-                <a class="skill">Urban Geography</a>
-                <a class="skill">Agisoft Metashape</a>
-                <a class="skill">Adobe Photoshop</a>
-                <a class="skill" data-tooltip="GIS tools & delivery: QGIS, Mapbox, tile exports" tabindex="0">GIS products</a> 
-                <a class="skill">Adobe Photoshop</a>
+                <a class="skill">Ecology studies</a>
+                <a class="skill">Urban and landscape studies</a>
+                <a class="skill">Remote sensing</a>
+                <a class="skill">Photo grammetry</a>
+                <a class="skill">Google Earth Engine</a>
+                <a class="skill skill-gis" data-tooltip="ArcPro, ArcMap, QGis, Saga Gis" tabindex="0">GIS products</a> 
+                <a class="skill">Python (basic)</a>
+                <a class="skill">Agisoft meta shape</a>
+                <a class="skill">Adobe Photoshop</a>                
             </div>
             <section class="section-project">
             <h2>Projects</h2>
@@ -50,77 +51,82 @@
                     </div>
                     <!--Subpanel description-->
                     <div id="proj1-panel1" class="subpanel"> <!---need to add scroll barel for panel-->
-                        <p>Here the focus is an urban-scale question: how to approximate pedestrian movement patterns in open public space. The logic is that foot traffic correlates with the number of carried devices. To reduce noise from stationary infrastructure (routers), I used Bluetooth-only scanning, which is better suited for capturing moving people rather than fixed access points.
-Data were collected in a single standardized time window: Monday, 21 October 2024, from 14:30 to 17:30, across 15 observation points. Movement between two points was estimated via “device overlap”: how many device identifiers were detected at both locations, suggesting that the same person moved through both points within the observation period.
-A key takeaway for interpreting the map: this method is sensitive to where sensors are placed. If a point is too close to building entrances or outside pedestrian corridors, it can capture unrelated passers-by (“parasitic traffic”), which inflates or distorts flows. That’s why point placement, test scans, and an understanding of effective detection range are critical. Even with these limitations, the resulting network clearly reveals stable clusters (campus sub-areas) and the strongest links between academic buildings, dormitories, and metro access zones.</p>
-                        <img src="img/image.png" width="100" height="100">
+                        <p>Here the focus is an urban-scale question: how to approximate pedestrian movement patterns in open public space. The logic is that foot traffic correlates with the number of carried devices. To reduce noise from stationary infrastructure (routers), I used Bluetooth-only scanning, which is better suited for capturing moving people rather than fixed access points.</p>
+                        <p>Data were collected in a single standardized time window: Monday, 21 October 2024, from 14:30 to 17:30, across 15 observation points. Movement between two points was estimated via “device overlap”: how many device identifiers were detected at both locations, suggesting that the same person moved through both points within the observation period.</p>
+                        <p>A key takeaway for interpreting the map: this method is sensitive to where sensors are placed. If a point is too close to building entrances or outside pedestrian corridors, it can capture unrelated passers-by (“parasitic traffic”), which inflates or distorts flows. That’s why point placement, test scans, and an understanding of effective detection range are critical. Even with these limitations, the resulting network clearly reveals stable clusters (campus sub-areas) and the strongest links between academic buildings, dormitories, and metro access zones.</p>
+                        <img src="img/1.png" width="300px" height="300px">
                     </div>
                     <div id="proj1-panel2" class="subpanel">
-                        <p>In this case I tested a simple idea: the number and type of “smart” devices can work as a proxy for human presence. Phones, headphones, watches, and home routers continuously emit Bluetooth/Wi-Fi signals, and by passively scanning these signals (device identifiers), you can approximate when and where people are actually staying.
-Zimnik is a small village (around 81 houses) with very few permanent residents; most houses function as dachas/second homes for people coming from Cherepovets (~95 km away). I collected observations over a full year (July 2024–June 2025) using a consistent schedule: a “weekend” snapshot (typically Saturday evening) versus a “weekday” snapshot (Sunday evening, when many visitors leave). Measurements were taken after sunset, when people are most likely to be indoors.
-What the maps illustrate: device counts peak in summer and drop sharply in winter, with Bluetooth declining more strongly. The interpretation is straightforward: Bluetooth detections tend to be more associated with younger visitors (more personal wearable/portable devices), while Wi-Fi detections also reflect stable households and older age groups (home routers). That’s why winter signals skew toward Wi-Fi (mainly year-round residents), while summer increases are driven by Bluetooth (seasonal arrivals). On the map this is visualized through different marker sizes/colors, separating year-round households from seasonal homes and highlighting how “human presence” shifts across the settlement through the year.</p>
-                        <img src="img/image.png" width="100" height="100">
+                        <p>In this case I tested a simple idea: the number and type of “smart” devices can work as a proxy for human presence. Phones, headphones, watches, and home routers continuously emit Bluetooth/Wi-Fi signals, and by passively scanning these signals (device identifiers), you can approximate when and where people are actually staying.</p>
+                        <p>Zimnik is a small village (around 81 houses) with very few permanent residents; most houses function as dachas/second homes for people coming from Cherepovets (~95 km away). I collected observations over a full year (July 2024–June 2025) using a consistent schedule: a “weekend” snapshot (typically Saturday evening) versus a “weekday” snapshot (Sunday evening, when many visitors leave). Measurements were taken after sunset, when people are most likely to be indoors.</p>
+                        <p>What the maps illustrate: device counts peak in summer and drop sharply in winter, with Bluetooth declining more strongly. The interpretation is straightforward: Bluetooth detections tend to be more associated with younger visitors (more personal wearable/portable devices), while Wi-Fi detections also reflect stable households and older age groups (home routers). That’s why winter signals skew toward Wi-Fi (mainly year-round residents), while summer increases are driven by Bluetooth (seasonal arrivals). On the map this is visualized through different marker sizes/colors, separating year-round households from seasonal homes and highlighting how “human presence” shifts across the settlement through the year.</p>
+                        <img src="img/2.jpg" width="300px" height="300px">
                     </div>
                     <div id="proj1-panel3" class="subpanel">
-                        <p>Longer observations in real cities face a serious technical issue: modern iOS/Android devices increasingly randomize (change) their identifiers over time to protect privacy. If you simply log device IDs, one person can appear as several “different devices,” which breaks tracking and flow estimation.
-This case uses a practical workaround: collect data inside a moving vehicle (public transport) and scan at a very high frequency (near-continuous logging). With second-by-second records, you can often detect the moment when an identifier changes: the “old” ID disappears and a “new” ID appears at the same timestamp, allowing you to reconnect segments into a single trip more reliably. For this approach, phones are usually not ideal (battery/OS constraints). A more robust setup uses laptops with external Bluetooth adapters and raw logging tools.
+                        <p>Longer observations in real cities face a serious technical issue: modern iOS/Android devices increasingly randomize (change) their identifiers over time to protect privacy. If you simply log device IDs, one person can appear as several “different devices,” which breaks tracking and flow estimation.</p>
+                        <p>This case uses a practical workaround: collect data inside a moving vehicle (public transport) and scan at a very high frequency (near-continuous logging). With second-by-second records, you can often detect the moment when an identifier changes: the “old” ID disappears and a “new” ID appears at the same timestamp, allowing you to reconnect segments into a single trip more reliably. For this approach, phones are usually not ideal (battery/OS constraints). A more robust setup uses laptops with external Bluetooth adapters and raw logging tools.
 The resulting map demonstrates meaningful mobility structure even under privacy constraints. Using a sample route (bus #27), the strongest flows link major industrial entry points (the metallurgical plant) with residential districts across the river, and connect the city center with those residential areas—patterns consistent with commuting and daily urban movement.</p>
-                        <img src="img/image.png" width="100" height="100">
+                        <img src="img/3.png" width="300px" height="300px">
                     </div>
                     <div class="project-overview">
                         <p>Text for Project One (overview)</p>
-                        <img src="img/image.png" width="100" height="100">
+                        <img src="img/image.png" width="200" height="200">
                         <a href="#" target="_blank">PDF file</a>
                     </div>
                 </div>
                 <button class="accordion-header">Spatial factors shaping outdoor sports comfort in Astana (GIS-based suitability mapping) <span>+</span></button>
                 <div class="accordion-panel">
-                    <p>This project answers a practical urban question: where in Astana is it actually comfortable to train outdoors, and what exactly makes some areas work better than others. The workflow starts from real behavior: I used the Strava activity heatmap to identify 14+ hotspots of sports activity, then validated and explained these patterns through an online survey of athletes (training frequency, typical routes, perceived pros/cons of places, and relative importance of different comfort factors). 
-Next, I translated "comfort" into measurable spatial layers and combined them in GIS. The factors included proximity to services and cycling infrastructure from OpenStreetMap (bike lanes, rentals, sport shops, food points), vegetation and residential density from the Astana GIS geoportal, safety signals from the Kazakhstan Ministry of Internal Affairs geoportal (crime and traffic accident density), visual attractiveness approximated via Instagram content, and accessibility zones from Google Maps. The final suitability surface was calculated via a weighted overlay on a 30 m regular grid across the city (implemented in ModelBuilder), where the weights come directly from the survey (for example, safety and bike infrastructure received the strongest influence, alongside greenery and attractiveness). 
-The result is an integrated suitability map that highlights where sports-friendly areas are likely to perform best, and—more importantly - where the city has a mismatch between demand and infrastructure. The model reveals a deficit of organized sports spaces in the historic city center (the area bounded by Saryarka, Bogenbai, Valikhanov, Baraev streets and the Ishim river embankment) and also on the periphery dominated by individual low-rise housing, while the lowest deficit is concentrated near the Ishim river and its tributaries. 
-From a planning perspective, the conclusions are blunt: the demand is high (many respondents train outdoors multiple times per week), but Astana’s transport system remains unsafe and uncomfortable for cycling, with a large share of athletes reporting regular risk of road incidents during training. Training patterns also require long, continuous corridors (average trip duration around two hours and distance around 50 km), which most popular spots currently cannot support. The project therefore argues for building connected networks between existing hotspots (not isolated “nice parks”), creating safe bicycle corridors to currently “remote but highly suitable” zones (like the green belt and ring road), and designing parks with clear functional separation to reduce conflicts between athletes and other visitors.</p>
-                    <img src="img/image.png" width="100" height="100">
+                    <p>This project answers a practical urban question: where in Astana is it actually comfortable to train outdoors, and what exactly makes some areas work better than others. The workflow starts from real behavior: I used the Strava activity heatmap to identify 14+ hotspots of sports activity, then validated and explained these patterns through an online survey of athletes (training frequency, typical routes, perceived pros/cons of places, and relative importance of different comfort factors).</p>
+                    <p>Next, I translated "comfort" into measurable spatial layers and combined them in GIS. The factors included proximity to services and cycling infrastructure from OpenStreetMap (bike lanes, rentals, sport shops, food points), vegetation and residential density from the Astana GIS geoportal, safety signals from the Kazakhstan Ministry of Internal Affairs geoportal (crime and traffic accident density), visual attractiveness approximated via Instagram content, and accessibility zones from Google Maps. The final suitability surface was calculated via a weighted overlay on a 30 m regular grid across the city (implemented in ModelBuilder), where the weights come directly from the survey (for example, safety and bike infrastructure received the strongest influence, alongside greenery and attractiveness).</p>
+                    <p>The result is an integrated suitability map that highlights where sports-friendly areas are likely to perform best, and—more importantly - where the city has a mismatch between demand and infrastructure. The model reveals a deficit of organized sports spaces in the historic city center (the area bounded by Saryarka, Bogenbai, Valikhanov, Baraev streets and the Ishim river embankment) and also on the periphery dominated by individual low-rise housing, while the lowest deficit is concentrated near the Ishim river and its tributaries. From a planning perspective, the conclusions are blunt: the demand is high (many respondents train outdoors multiple times per week), but Astana’s transport system remains unsafe and uncomfortable for cycling, with a large share of athletes reporting regular risk of road incidents during training. Training patterns also require long, continuous corridors (average trip duration around two hours and distance around 50 km), which most popular spots currently cannot support. The project therefore argues for building connected networks between existing hotspots (not isolated “nice parks”), creating safe bicycle corridors to currently “remote but highly suitable” zones (like the green belt and ring road), and designing parks with clear functional separation to reduce conflicts between athletes and other visitors.</p>
+                    <img src="img/4.jpg" width="300px" height="300px">
                     <a href="#" target="_blank">PDF file</a>
                 </div>
                 <button class="accordion-header">Coursework: Belaya Berel Route (Katon-Karagay National Park) - Aesthetic Landscape Evaluation Map<span>+</span></button>
                 <div class="accordion-panel">
-                    <p>The Belaya Berel map presents a GIS-based assessment of scenic viewpoint quality for one of the tourist routes in Katon-Karagay National Park. The goal was to make “aesthetic value” comparable and transparent, by scoring what a visitor can actually see from key points along the route using a consistent, repeatable workflow.
-Methodologically, I selected five indicators that can be computed in GIS: mountain-peak abundance, depth/variety of perspectives, presence of water features, landscape naturalness, and forest cover. I used a 30 m SRTM DEM and Landcover 2020 as input data. For every observation point, I first created a viewshed (visibility model) with an observer height of 1.6 m; this visible area was then used as a mask for all indicator calculations. Mountain peaks were derived via Topographic Position Index (TPI), calculated as the difference between a cell’s elevation and the mean elevation of its neighborhood; positive values were interpreted as elevated landforms, cleaned from noise, and aggregated to approximate how terrain forms merge visually at distance. Perspective depth was formalized by separating near views (within 1.5 km) and far views (beyond 1.5 km), with higher scores assigned to viewpoints that provide both. Water presence, forest cover share, and naturalness were extracted from land-cover classes within the visible area. The scoring and overlay were automated in ArcMap 10.8 (ModelBuilder) to ensure identical processing across all viewpoints.
-For the Belaya Berel route, the results show a dominance of high and very high scenic-value viewpoints, with no low-value points identified. The highest-ranked viewpoint is located in the upper river valley (point #4): it combines a panoramic mountain setting with visibility of the Belaya Berel River, a very large number of mountain peaks in view, and an absence of visible anthropogenic objects - maximizing both naturalness and visual complexity. Medium scores occur where the view is more constrained and some indicators (especially forest cover and water visibility) weaken within the viewshed.
-The main takeaway is that GIS and remote sensing make scenic evaluation scalable and less subjective by translating “beauty” into explicit indicators that can be computed and compared along a route. Practically, the map helps justify where to prioritize viewpoints, photo stops, and interpretive points, and it shows that Belaya Berel is aesthetically consistent - dominated by high-value panoramas - making it a strong candidate for route planning and promotion.</p>
-                    <img src="img/image.png" width="100" height="100">
+                    <p>The Belaya Berel map presents a GIS-based assessment of scenic viewpoint quality for one of the tourist routes in Katon-Karagay National Park. The goal was to make “aesthetic value” comparable and transparent, by scoring what a visitor can actually see from key points along the route using a consistent, repeatable workflow.</p>
+                    <p>Methodologically, I selected five indicators that can be computed in GIS: mountain-peak abundance, depth/variety of perspectives, presence of water features, landscape naturalness, and forest cover. I used a 30 m SRTM DEM and Landcover 2020 as input data. For every observation point, I first created a viewshed (visibility model) with an observer height of 1.6 m; this visible area was then used as a mask for all indicator calculations. Mountain peaks were derived via Topographic Position Index (TPI), calculated as the difference between a cell’s elevation and the mean elevation of its neighborhood; positive values were interpreted as elevated landforms, cleaned from noise, and aggregated to approximate how terrain forms merge visually at distance. Perspective depth was formalized by separating near views (within 1.5 km) and far views (beyond 1.5 km), with higher scores assigned to viewpoints that provide both. Water presence, forest cover share, and naturalness were extracted from land-cover classes within the visible area. The scoring and overlay were automated in ArcMap 10.8 (ModelBuilder) to ensure identical processing across all viewpoints.</p>
+                    <p>For the Belaya Berel route, the results show a dominance of high and very high scenic-value viewpoints, with no low-value points identified.</p>
+                    <p>The highest-ranked viewpoint is located in the upper river valley (point #4): it combines a panoramic mountain setting with visibility of the Belaya Berel River, a very large number of mountain peaks in view, and an absence of visible anthropogenic objects - maximizing both naturalness and visual complexity.</p>
+                    <p>Medium scores occur where the view is more constrained and some indicators (especially forest cover and water visibility) weaken within the viewshed. The main takeaway is that GIS and remote sensing make scenic evaluation scalable and less subjective by translating “beauty” into explicit indicators that can be computed and compared along a route. Practically, the map helps justify where to prioritize viewpoints, photo stops, and interpretive points, and it shows that Belaya Berel is aesthetically consistent - dominated by high-value panoramas - making it a strong candidate for route planning and promotion.</p>
+                    <img src="img/5.png" width="300px" height="300px">
                     <a href="#" target="_blank">PDF file</a>
                 </div>
                 <button class="accordion-header">Functional Zoning of Karaganda: Land Use, Centers, and Spatial Barriers (2024)<span>+</span></button>
                 <div class="accordion-panel">
-                    <p>I produced a functional zoning map of Karaganda (2024) to explain how the city is spatially organized and why certain conflicts (mobility, environmental pressure, land-use mismatches) emerge. The goal was to translate a “mental map” of the city into a clear GIS-ready scheme that shows where key functions concentrate and how historical development shaped today’s structure.
-The zoning is based on a combination of field observations, visual interpretation of satellite imagery, and POI/land-use information from OpenStreetMap and 2GIS. I delineated the main urban functions: industrial, utility/warehouse, residential (individual housing, 2–4 storey, 5-storey, and high-rise areas), public–business (administration, culture, healthcare, education, religion, commerce), recreational (parks, green areas, sports facilities), plus other special-use areas (e.g., military sites, cemeteries). The map also emphasizes major planning “axes” (Nazarbayev Ave, Karl Marx St, Bukhar-Zhyrau Ave) and the railway barrier separating the New City from the South-East.
-The results show a strongly polycentric city with several development "cores" gradually pulling toward each other. Industrial land use is anchored by three major clusters: the Old City mining zone (including the Kostenko mine, with subsidence areas), the South-East cluster near the Fedorovskoe reservoir shaped by open-pit mining and spoil deposits, and Maikuduk, where metal-structure manufacturing facilities formed a newer industrial belt (growth since the 1960s). Utility and warehouse zones align mainly along the railway, reflecting logistics dependence. Residential morphology clearly records historical stages: early low-rise brick housing (1930s–1950s), later organized “microdistrict” patterns and panel five-storey housing (1960s), and the most recent wave of nine-storey construction (2000s), especially in the South-East and on Maikuduk’s edge - visually supporting the idea of future merging between these districts.
-The main conclusions are practical: Karaganda's polycentric structure still creates time costs for cross-city mobility, especially between peripheral districts and the New City, even with public transport in place. The city also has a pronounced “layered” building pattern (individual housing mixed with mid- and high-rise blocks), which can intensify local air-quality problems during the heating season when emissions from individual heating are trapped by surrounding taller buildings. Finally, the functional map highlights structural deficits: recreation is overly concentrated (the Central Park dominates), universities and major services cluster in only a few districts, and large areas remain constrained by the legacy of coal mining (subsidence zones, waste heaps), which limits safe redevelopment and shapes the city’s long-term planning challenges.</p>
-                    <img src="img/image.png" width="100" height="100">
+                    <p>I produced a functional zoning map of Karaganda (2024) to explain how the city is spatially organized and why certain conflicts (mobility, environmental pressure, land-use mismatches) emerge. The goal was to translate a “mental map” of the city into a clear GIS-ready scheme that shows where key functions concentrate and how historical development shaped today’s structure.</p>
+                    <p>The zoning is based on a combination of field observations, visual interpretation of satellite imagery, and POI/land-use information from OpenStreetMap and 2GIS. I delineated the main urban functions: industrial, utility/warehouse, residential (individual housing, 2–4 storey, 5-storey, and high-rise areas), public–business (administration, culture, healthcare, education, religion, commerce), recreational (parks, green areas, sports facilities), plus other special-use areas (e.g., military sites, cemeteries). The map also emphasizes major planning “axes” (Nazarbayev Ave, Karl Marx St, Bukhar-Zhyrau Ave) and the railway barrier separating the New City from the South-East.
+The results show a strongly polycentric city with several development "cores" gradually pulling toward each other. Industrial land use is anchored by three major clusters: the Old City mining zone (including the Kostenko mine, with subsidence areas), the South-East cluster near the Fedorovskoe reservoir shaped by open-pit mining and spoil deposits, and Maikuduk, where metal-structure manufacturing facilities formed a newer industrial belt (growth since the 1960s). Utility and warehouse zones align mainly along the railway, reflecting logistics dependence. Residential morphology clearly records historical stages: early low-rise brick housing (1930s–1950s), later organized “microdistrict” patterns and panel five-storey housing (1960s), and the most recent wave of nine-storey construction (2000s), especially in the South-East and on Maikuduk’s edge - visually supporting the idea of future merging between these districts.</p>
+<p>The main conclusions are practical: Karaganda's polycentric structure still creates time costs for cross-city mobility, especially between peripheral districts and the New City, even with public transport in place. The city also has a pronounced “layered” building pattern (individual housing mixed with mid- and high-rise blocks), which can intensify local air-quality problems during the heating season when emissions from individual heating are trapped by surrounding taller buildings. Finally, the functional map highlights structural deficits: recreation is overly concentrated (the Central Park dominates), universities and major services cluster in only a few districts, and large areas remain constrained by the legacy of coal mining (subsidence zones, waste heaps), which limits safe redevelopment and shapes the city’s long-term planning challenges.</p>
+                    <img src="img/6.jpg" width="300px" height="300px">
                     <a href="#" target="_blank">PDF file</a>
                 </div>
                 <button class="accordion-header">Mapping Download Speed in Almaty (2020–2025)<span>+</span></button>
                 <div class="accordion-panel">
-                    <p>During a seminar on urban ecology, we explored an Ookla dataset derived from the Speedtest platform. I used it to create a short spatial analysis of how mobile download speed evolved across Almaty between 2020 and 2025.
-The map is built on a ~500 m grid: each cell is colored by the recorded download speed (Mb/s) for a given year. In 2020, higher speeds were concentrated in the city center, while many peripheral districts remained below 5 Mb/s. By 2025, most of the urban area reaches 11–25 Mb/s (or higher), and low-speed zones shrink to a few scattered pockets near the fringe. The spatial pattern also suggests stronger recent growth toward the north, in the direction of Almaty International Airport (ALA).
-Next, this layer can be compared with population density, land use, and service infrastructure to test what best explains the remaining “slow pockets” and where upgrades would have the biggest equity impact.</p>
-                    <img src="img/image.png" width="100" height="100">
+                    <p>During a seminar on urban ecology, we explored an Ookla dataset derived from the Speedtest platform. I used it to create a short spatial analysis of how mobile download speed evolved across Almaty between 2020 and 2025.</p>
+                    <p>The map is built on a ~500 m grid: each cell is colored by the recorded download speed (Mb/s) for a given year. In 2020, higher speeds were concentrated in the city center, while many peripheral districts remained below 5 Mb/s. By 2025, most of the urban area reaches 11–25 Mb/s (or higher), and low-speed zones shrink to a few scattered pockets near the fringe. The spatial pattern also suggests stronger recent growth toward the north, in the direction of Almaty International Airport (ALA). Next, this layer can be compared with population density, land use, and service infrastructure to test what best explains the remaining “slow pockets” and where upgrades would have the biggest equity impact.</p>
+                    <img src="img/7.gif" width="300px" height="300px">
                     <a href="#" target="_blank">PDF file</a>
                 </div>
                 <button class="accordion-header">Astana Rooftop Solar Potential: Building-Level Annual PV Generation Map<span>+</span></button>
                 <div class="accordion-panel">
-                    <p>In this project I estimated rooftop solar PV potential in Astana and visualized it as building-level annual electricity generation (kWh/year). The goal was to produce a map that shows which roofs are realistically usable and the order of magnitude of annual output across different city districts.
-Methodologically, I treated each building roof as a candidate PV surface and ran a two-step workflow: 
-    1. suitability 
-    2. screening energy yield calculation. 
-Suitability screening excludes roofs that are impractical for PV (geometry/orientation constraints, fragmented/too-small usable areas, and other limiting factors), which are shown as unsuitable buildings on the map. For the remaining roofs, I modeled solar input at roof level (using terrain/roof geometry-slope and aspect-plus shading effects) and converted it into annual generation via an engineering conversion: 
-    • usable roof area
-    • installable PV area (packing/spacing factor)
-    • installed capacity
-    • annual kWh using panel efficiency and a performance-loss factor (inverter/temperature/soiling combined).
-The final map classifies buildings by annual generation bands (from <50,000 kWh up to >150,000 kWh per year) and makes spatial differences easy to read across Astana's districts. A clear takeaway is that PV potential is highly uneven at the building scale: the city contains many roofs with modest yield, while a smaller share of large, well-oriented roofs concentrates the highest annual generation class-exactly the type of targets that make PV deployment efficient.</p>
-                    <img src="img/image.png" width="100" height="100">
+                    <p>In this project I estimated rooftop solar PV potential in Astana and visualized it as building-level annual electricity generation (kWh/year). The goal was to produce a map that shows which roofs are realistically usable and the order of magnitude of annual output across different city districts.</p>
+                    <p>Methodologically, I treated each building roof as a candidate PV surface and ran a two-step workflow:</p>
+                    <ol>
+                      <li>Suitability</li>
+                      <li>Screening &amp; energy-yield calculation</li>
+                    </ol>
+                    <p>Suitability screening excludes roofs that are impractical for PV (geometry/orientation constraints, fragmented/too-small usable areas, and other limiting factors), which are shown as unsuitable buildings on the map.</p>
+                    <p>For the remaining roofs, I modeled solar input at roof level (using terrain/roof geometry — slope and aspect — plus shading effects) and converted it into annual generation via an engineering conversion:</p>
+                    <ul>
+                      <li>usable roof area</li>
+                      <li>installable PV area (packing/spacing factor)</li>
+                      <li>installed capacity</li>
+                      <li>annual kWh using panel efficiency and a performance-loss factor (inverter/temperature/soiling combined)</li>
+                    </ul>
+                    <p>The final map classifies buildings by annual generation bands (from &lt;50,000 kWh up to &gt;150,000 kWh per year) and makes spatial differences easy to read across Astana's districts.</p>
+                    <p>A clear takeaway is that PV potential is highly uneven at the building scale: the city contains many roofs with modest yield, while a smaller share of large, well-oriented roofs concentrates the highest annual generation class — exactly the type of targets that make PV deployment efficient.</p>
+                    <img src="img/8.gif" width="300px" height="300px">
                     <a href="#" target="_blank">PDF file</a>
                 </div>
             </div>    
@@ -131,11 +137,18 @@ The final map classifies buildings by annual generation bands (from <50,000 kWh 
             <a href="mailto:konnovandrey55@gmail.com">konnovandrey55@gmail.com</a>
             </section>
         </div>
+        <!-- Image modal for full-size preview -->
+<div id="image-modal" class="img-modal" aria-hidden="true">
+  <div class="img-modal-inner">
+    <button class="img-modal-close" aria-label="Close image">×</button>
+    <img class="img-modal-content" src="" alt="">
+  </div>
     </div>
+    
     <bottom class="footer" text-align="right">
     <p>© 2026 Andrey Konnov</p>
     </bottom>
-
+  </div>
 <script>
 // Header toggles its own main panel (like Project Two) and closes other main panels in the group
 document.querySelectorAll('.accordion-header').forEach(button => {
@@ -193,6 +206,42 @@ document.querySelectorAll('.subitem').forEach(btn => {
     if (panel) panel.classList.add('open');
     btn.classList.add('active');
   });
+});
+
+// Image modal: open image full-size on click, close on overlay/close/ESC
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('image-modal');
+  if (!modal) return;
+  const modalImg = modal.querySelector('.img-modal-content');
+  const closeBtn = modal.querySelector('.img-modal-close');
+
+  function openModal(src, alt){
+    modalImg.src = src || '';
+    modalImg.alt = alt || '';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    // wait for fade-out then clear src to avoid flicker
+    document.body.style.overflow = '';
+    setTimeout(() => { modalImg.src = ''; modalImg.alt = ''; }, 240);
+  }
+
+  // Bind images inside project panels
+  document.querySelectorAll('.project-group img, .accordion-panel img, .subpanel img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', (e) => {
+      const full = img.getAttribute('data-full') || img.src;
+      openModal(full, img.alt || '');
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 });
 </script>
 </body>
