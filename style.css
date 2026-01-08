@@ -34,6 +34,17 @@ a{
     text-align: center;
 }
 
+/* Profile image as circular avatar */
+.profile-pic{
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0 auto 12px;
+    border-radius: 70%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.06);
+}
+
 .section-1 p{
     font-size: 1.1rem;
     padding-bottom: 10px;
@@ -160,7 +171,52 @@ a{
 .accordion-header.active span { transform: rotate(45deg); }
 
 .skills-list { display:flex; flex-direction:row; gap:8px; margin:8px 0 14px 0; flex-wrap:wrap; align-items:center; }
-.skill { display:inline-block; padding:10px 18px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); color: var(--text-light); border-radius:999px; text-decoration:none; transition: background .16s ease, transform .12s ease; box-sizing: border-box; text-align: center; }
+ .skill { display:inline-block; padding:10px 18px; background: rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03); color: var(--text-light); border-radius:999px; text-decoration:none; transition: background .16s ease, transform .12s ease; box-sizing: border-box; text-align: center; position: relative; }
+
+/* Tooltip popup for elements with data-tooltip */
+.skill[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 10px);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .16s ease, transform .16s ease;
+  pointer-events: none;
+  z-index: 40;
+}
+.skill[data-tooltip]::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 4px);
+  border: 6px solid transparent;
+  border-top-color: rgba(0,0,0,0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .16s ease;
+  z-index: 40;
+}
+.skill[data-tooltip]:hover::after,
+.skill[data-tooltip]:focus::after,
+.skill[data-tooltip]:hover::before,
+.skill[data-tooltip]:focus::before {
+  opacity: 1;
+  visibility: visible;
+}
+.skill[data-tooltip]:focus {
+  outline: 2px solid rgba(10,102,194,0.25);
+  border-color: rgba(10,102,194,0.35);
+}
 @media (max-width:480px) {
   .skills-list { flex-direction:column; }
   .skill { width:100%; max-width:100%; border-radius:8px; }
@@ -211,4 +267,33 @@ a{
 }
 .subpanel.open { max-height: 400px; padding: 8px 20px; opacity: 1; box-shadow: 0 3px 8px rgba(0,0,0,0.5); }
 
-.project-overview { padding-top:10px }
+/* Enable vertical scrolling for long panel content inside project-group */
+.project-group .accordion-panel.open {
+  max-height: 60vh; /* limit height to viewport proportion */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.06) transparent;
+}
+.project-group .subpanel.open {
+  max-height: 50vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.06) transparent;
+}
+/* Webkit scrollbar styling */
+.project-group .accordion-panel.open::-webkit-scrollbar,
+.project-group .subpanel.open::-webkit-scrollbar {
+  width: 10px;
+}
+.project-group .accordion-panel.open::-webkit-scrollbar-thumb,
+.project-group .subpanel.open::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+}
+.project-group .accordion-panel.open::-webkit-scrollbar-track,
+.project-group .subpanel.open::-webkit-scrollbar-track {
+  background: transparent;
+}
+
